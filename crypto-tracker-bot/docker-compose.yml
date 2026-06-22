@@ -1,0 +1,12 @@
+services:
+  crypto-tracker:
+    build: .
+    container_name: crypto-tracker-bot
+    env_file:
+      - .env
+    volumes:
+      - crypto-tracker-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  crypto-tracker-data:
